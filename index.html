@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game PPTLS</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="img/icon.webp" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Piedra Papel Tijera Lagarto Spock</h1>
+
+        <div id="result">
+
+            <img id="cpu-img" src="img/paper.svg">
+
+            <div id="start-text">
+                ¡Escoge!
+            </div>
+
+            <img id="user-img" src="img/scissors.svg">
+
+        </div>
+
+        <div id="group-btn">
+            <button onclick="play(0)" id="rock" type="button">
+                <img src="img/rock.svg"/>
+            </button>
+            <button onclick="play(1)" id="paper" type="button">
+                <img src="img/paper.svg"/>
+            </button>
+            <button onclick="play(2)" id="scissors" type="button">
+                <img src="img/scissors.svg"/>
+            </button>
+            <button onclick="play(3)" id="lizard" type="button">
+                <img src="img/lizard.svg" alt="">
+            </button>
+            <button onclick="play(4)" id="spock" type="button">
+                <img src="img/spock.svg" alt="">
+            </button>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
