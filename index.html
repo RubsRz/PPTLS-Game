@@ -1,48 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game PPTLS</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Piedra, Papel, Tijera, Lagarto, Spock</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="shortcut icon" href="img/icon.webp" type="image/x-icon">
 </head>
 
 <body>
     <div class="container">
-        <h1>Piedra Papel Tijera Lagarto Spock</h1>
+        <header>
+            <h1>Piedra Papel Tijera Lagarto Spock</h1>
+            <div class="rules">
+                <button id="rules-btn" class="rules-btn">
+                    <i class="fas fa-question-circle"></i> Reglas
+                </button>
+                <div class="rules-panel hidden">
+                    <div class="rules-header">
+                        <h3>Reglas del Juego</h3>
+                        <button class="close-rules">&times;</button>
+                    </div>
+                    <div class="rules-content">
+                        <div class="rule-item">
+                            <i class="fas fa-hand-scissors"></i>
+                            <p>Tijera corta Papel</p>
+                        </div>
+                        <div class="rule-item">
+                            <i class="fas fa-hand-paper"></i>
+                            <p>Papel cubre Piedra</p>
+                        </div>
+                        <div class="rule-item">
+                            <i class="fas fa-hand-rock"></i>
+                            <p>Piedra aplasta Lagarto</p>
+                        </div>
+                        <div class="rule-item">
+                            <i class="fa-solid fa-hand-lizard"></i>
+                            <p>Lagarto envenena Spock</p>
+                        </div>
+                        <div class="rule-item">
+                            <i class="fas fa-hand-spock"></i>
+                            <p>Spock rompe Tijera</p>
+                        </div>
+                        <div class="rule-item">
+                            <i class="fas fa-hand-scissors"></i>
+                            <p>Tijera decapita Lagarto</p>
+                        </div>
+                        <div class="rule-item">
+                            <i class="fa-solid fa-hand-lizard"></i>
+                            <p>Lagarto come Papel</p>
+                        </div>
+                        <div class="rule-item">
+                            <i class="fas fa-hand-paper"></i>
+                            <p>Papel desautoriza Spock</p>
+                        </div>
+                        <div class="rule-item">
+                            <i class="fas fa-hand-spock"></i>
+                            <p>Spock vaporiza Piedra</p>
+                        </div>
+                        <div class="rule-item">
+                            <i class="fas fa-hand-rock"></i>
+                            <p>Piedra aplasta Tijera</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-        <div id="result">
+        <main>
+            <div class="game-area">
+                <div class="computer-section">
+                    <div class="choice-img">
+                        <div id="cpu-img" class="icon-placeholder">
+                            <i class="fas fa-question"></i>
+                        </div>
+                    </div>
+                    <div class="score">Computadora: <span id="cpu-score">0</span></div>
+                </div>
 
-            <img id="cpu-img" src="img/paper.svg">
+                <div id="result-text" class="result-text">¡Escoge tu jugada!</div>
 
-            <div id="start-text">
-                ¡Escoge!
+                <div class="player-section">
+                    <div class="choice-img">
+                        <div id="user-img" class="icon-placeholder">
+                            <i class="fas fa-question"></i>
+                        </div>
+                    </div>
+                    <div class="score">Tú: <span id="user-score">0</span></div>
+                </div>
             </div>
 
-            <img id="user-img" src="img/scissors.svg">
-
-        </div>
-
-        <div id="group-btn">
-            <button onclick="play(0)" id="rock" type="button">
-                <img src="img/rock.svg"/>
-            </button>
-            <button onclick="play(1)" id="paper" type="button">
-                <img src="img/paper.svg"/>
-            </button>
-            <button onclick="play(2)" id="scissors" type="button">
-                <img src="img/scissors.svg"/>
-            </button>
-            <button onclick="play(3)" id="lizard" type="button">
-                <img src="img/lizard.svg" alt="">
-            </button>
-            <button onclick="play(4)" id="spock" type="button">
-                <img src="img/spock.svg" alt="">
-            </button>
-        </div>
-
+            <div class="controls">
+                <div class="choices">
+                    <button onclick="playGame(0)" class="choice-btn" data-choice="rock">
+                        <i class="fas fa-hand-rock"></i>
+                        <span>Piedra</span>
+                    </button>
+                    <button onclick="playGame(1)" class="choice-btn" data-choice="paper">
+                        <i class="fas fa-hand-paper"></i>
+                        <span>Papel</span>
+                    </button>
+                    <button onclick="playGame(2)" class="choice-btn" data-choice="scissors">
+                        <i class="fas fa-hand-scissors"></i>
+                        <span>Tijera</span>
+                    </button>
+                    <button onclick="playGame(3)" class="choice-btn" data-choice="lizard">
+                        <i class="fa-solid fa-hand-lizard"></i>
+                        <span>Lagarto</span>
+                    </button>
+                    <button onclick="playGame(4)" class="choice-btn" data-choice="spock">
+                        <i class="fas fa-hand-spock"></i>
+                        <span>Spock</span>
+                    </button>
+                </div>
+                <button id="reset-btn" class="reset-btn">
+                    <i class="fas fa-redo"></i> Reiniciar
+                </button>
+            </div>
+        </main>
     </div>
 
     <script src="app.js"></script>
